@@ -66,7 +66,7 @@ namespace KleinenijnProject
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Ga naar de Kleinenijn site en controleer pagina\'s")]
-        [NUnit.Framework.CategoryAttribute("GoogleIntakeTest")]
+        [NUnit.Framework.CategoryAttribute("KleinenijnIntakeTest")]
         [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Welkom", "Huiselijk en vertrouwd", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Foto\'s", "Foto\'s", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Kosten", "Tarieven en wat u moet weten", new string[0])]
@@ -74,7 +74,7 @@ namespace KleinenijnProject
         public virtual void GaNaarDeKleinenijnSiteEnControleerPaginaS(string website, string menuKnop, string paginaTekst, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "GoogleIntakeTest"};
+                    "KleinenijnIntakeTest"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

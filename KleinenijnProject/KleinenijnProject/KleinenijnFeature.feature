@@ -3,7 +3,7 @@
 	Als een sitebeheerder
 	Wil ik automatisch teksten kunnen controleren
 	
-@GoogleIntakeTest
+@KleinenijnIntakeTest
 Abstract Scenario: Ga naar de Kleinenijn site en controleer pagina's
 	Gegeven Ik ga naar de volgende pagina <Website>
     En Ik zie dat de pagina geladen is
