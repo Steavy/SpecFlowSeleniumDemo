@@ -6,8 +6,8 @@
 @KleinenijnIntakeTest
 Abstract Scenario: Ga naar de Kleinenijn site en controleer pagina's
 	Gegeven Ik ga naar de volgende pagina <Website>
-    En Ik zie dat de pagina geladen is
-    Als Ik klik op de knop <MenuKnop>
+	En Ik zie dat de pagina geladen is
+	Als Ik klik op de knop <MenuKnop>
 	Dan Wordt de tekst <PaginaTekst> op een pagina van de site gevonden
 Voorbeelden: 
 | Website       | MenuKnop   | PaginaTekst                  |
