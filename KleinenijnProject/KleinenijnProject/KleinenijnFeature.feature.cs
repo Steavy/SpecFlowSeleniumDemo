@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace GoogleSearchTest
+namespace KleinenijnProject
 {
     using TechTalk.SpecFlow;
     
@@ -18,21 +18,21 @@ namespace GoogleSearchTest
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Search on Google page")]
-    public partial class SearchOnGooglePageFeature
+    [NUnit.Framework.DescriptionAttribute("Zoeken van pagina teksten op website Kleinenijn.nl")]
+    public partial class ZoekenVanPaginaTekstenOpWebsiteKleinenijn_NlFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GoogleSearchFeature.feature"
+#line 1 "KleinenijnFeature.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Search on Google page", "\tIn order to search an answer on internet\r\n\tAs an internet user\r\n\tI want to searc" +
-                    "h an item automatically with Google", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("nl-NL"), "Zoeken van pagina teksten op website Kleinenijn.nl", "\tOm teskten op de kleinenijn site te zoeken\r\n\tAls een sitebeheerder\r\n\tWil ik auto" +
+                    "matisch teksten kunnen controleren", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -65,14 +65,13 @@ namespace GoogleSearchTest
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Controleer het zoekresultaat van een zoekopdracht via Google")]
+        [NUnit.Framework.DescriptionAttribute("Ga naar de Kleinenijn site en controleer pagina\'s")]
         [NUnit.Framework.CategoryAttribute("GoogleIntakeTest")]
-        [NUnit.Framework.TestCaseAttribute("google.com", "Specflow", "SpecFlow - Cucumber for .NET", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("google.com", "cucumber", "Cucumber", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("google.com", "nu.nl", "NU - Het laatste nieuws het eerst op NU.nl", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("google.com", "ad.nl", "AD.nl, het laatste nieuws uit binnen- en buitenland, sport en ...", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("google.com", "test", "Test - Wikipedia", new string[0])]
-        public virtual void ControleerHetZoekresultaatVanEenZoekopdrachtViaGoogle(string website, string searchItem, string answer, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Welkom", "Huiselijk en vertrouwd", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Foto\'s", "Foto\'s", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Kosten", "Tarieven en wat u moet weten", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Kleinenijn.nl", "Contact", "Contact", new string[0])]
+        public virtual void GaNaarDeKleinenijnSiteEnControleerPaginaS(string website, string menuKnop, string paginaTekst, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "GoogleIntakeTest"};
@@ -80,24 +79,17 @@ namespace GoogleSearchTest
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Controleer het zoekresultaat van een zoekopdracht via Google", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ga naar de Kleinenijn site en controleer pagina\'s", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given(string.Format("I navigate to the page {0}", website), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("Ik ga naar de volgende pagina {0}", website), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Gegeven ");
 #line 9
-    testRunner.And("I see the page is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Keyword"});
-            table1.AddRow(new string[] {
-                        string.Format("{0}", searchItem)});
+    testRunner.And("Ik zie dat de pagina geladen is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "En ");
 #line 10
- testRunner.When("I enter Search Keyword in the Search Text box", ((string)(null)), table1, "When ");
-#line 13
-    testRunner.And("I click on Search Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.Then(string.Format("Search items {0} shows the items related to SpecFlow", answer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When(string.Format("Ik klik op de knop {0}", menuKnop), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Als ");
+#line 11
+ testRunner.Then(string.Format("Wordt de tekst {0} op een pagina van de site gevonden", paginaTekst), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dan ");
 #line hidden
             this.ScenarioCleanup();
         }

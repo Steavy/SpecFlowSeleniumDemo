@@ -11,16 +11,16 @@ using NUnit.Framework;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
 
-namespace GoogleSearchTest
+namespace KleinenijnTest
 {
     [Binding] // This can only be used once.
-    public partial class GoogleSearchFeatureSteps
+    public partial class KleinenijnFeatureSteps
     {
         IWebDriver driver;
         string BrowserType = "Firefox";
         
-        [Given(@"I navigate to the page (.*)")]
-        public void GivenINavigateToThePage(string StartPage)
+        [Given(@"Ik ga naar de volgende pagina (.*)")]
+        public void IkGaNaarDeVolgendePagina(string StartPage)
         {
             if (BrowserType == "Chrome")
             { driver = new ChromeDriver(); }
@@ -28,12 +28,12 @@ namespace GoogleSearchTest
             { driver = new InternetExplorerDriver(); }
             else if (BrowserType == "Firefox")
                { driver = new FirefoxDriver(); }
-            string UrlGoogle = "https://www." + StartPage + ".bd";                         
-            driver.Navigate().GoToUrl(UrlGoogle);
+            string UrlSite = "http://www." + StartPage;                         
+            driver.Navigate().GoToUrl(UrlSite);
         }
 
-        [Given(@"I see the page is loaded")]
-        public void GivenISeeThePageIsLoaded()
+        [Given(@"Ik zie dat de pagina geladen is")]
+        public void IkZieDatDePaginaGeladenIs()
         {
            if (BrowserType == "IE") 
                 {
@@ -48,10 +48,10 @@ namespace GoogleSearchTest
                     //wait.Until(driver);
                     wait.Until(d => d.FindElement(By.Id("hplogo")));
                 }
-                Assert.AreEqual("Google", driver.Title);
+                Assert.AreEqual("Kleinschalige Kinderopvang Kleine Nijn - uw Gastouder in Gorredijk", driver.Title);
             }
             else
-            { Assert.AreEqual("Google", driver.Title); }
+            { Assert.AreEqual("Kleinschalige Kinderopvang Kleine Nijn - uw Gastouder in Gorredijk", driver.Title); }
         }
 
         [When(@"I enter Search Keyword in the Search Text box")]
@@ -61,17 +61,17 @@ namespace GoogleSearchTest
             driver.FindElement(By.Name("q")).SendKeys(searchText);
         }
 
-        [When(@"I click on Search Button")]
-        public void WhenIClickOnSearchButton()
+        [When(@"Ik klik op de knop (.*)")]
+        public void IkKlikOpDeKnop(string Knop)
         {
-            driver.FindElement(By.Name("btnG")).Click();
+            driver.FindElement(By.LinkText(Knop)).Click();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
         }
 
-        [Then(@"Search items (.*) shows the items related to SpecFlow")]
-        public void ThenSearchItemsShowsTheItemsRelatedToSpecFlow(String Answer)
+        [Then(@"Wordt de tekst (.*) op een pagina van de site gevonden")]
+        public void WordtDeTekstOpEenPaginaVanDeSiteGevonden(String Answer)
         {
-            Assert.AreEqual((Answer), driver.FindElement(By.XPath("//h3/a")).Text);
+            Assert.AreEqual((Answer), driver.FindElement(By.CssSelector("td.pageName")).Text);
             driver.Close();
         }
 
