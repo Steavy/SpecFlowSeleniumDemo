@@ -85,10 +85,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given(string.Format("Ik ga naar de volgende pagina {0}", website), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Gegeven ");
 #line 9
- testRunner.And("Ik zie dat de pagina geladen is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "En ");
+    testRunner.And("Ik zie dat de pagina geladen is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "En ");
 #line 10
  testRunner.When(string.Format("Ik klik op de knop {0}", menuKnop), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Als ");
-#line 11
+#line 12
  testRunner.Then(string.Format("Wordt de tekst {0} op een pagina van de site gevonden", paginaTekst), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dan ");
 #line hidden
             this.ScenarioCleanup();

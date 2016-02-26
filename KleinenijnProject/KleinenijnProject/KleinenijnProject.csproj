@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KleinenijnFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="KleinenijnFeatureSteps2.cs" />
     <Compile Include="KleinenijnFeatureSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
